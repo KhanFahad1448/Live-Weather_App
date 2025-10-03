@@ -1,14 +1,11 @@
 <p align="center">
-<img src="https://www.htmlhints.com/image/react/reactWeatherApp.png" width="100%">
+  <img src="src/images/Current Screenshot.png" width="100%">
 </p>
-
-<img src="../Live Weather App/src/images/Current Screenshot.png">
- <p align="center">
-  View <a href="https://master.d2gxbs6vwhkz68.amplifyapp.com/">Live demo</a>.
- </p>
 
 ## Setup
 
-```
-npm i && npm start
-```
+To install dependencies and start the project:
+
+```bash
+npm install
+npm start
