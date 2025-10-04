@@ -11,9 +11,7 @@ function Forcast(props) {
   const search = (city) => {
     axios
       .get(
-        `${apiKeys.base}weather?q=${
-          city !== "[object Object]" ? city : query
-        }&units=metric&APPID=${apiKeys.key}`
+        `${apiKeys.base}weather?q=${city !== "[object Object]" ? city : query}&units=metric&APPID=${apiKeys.key}`
       )
       .then((response) => {
         setWeather(response.data);
@@ -49,8 +47,10 @@ function Forcast(props) {
           animate={defaults.animate}
         />
       </div>
+
       <div className="today-weather">
         <h3>{props.weather}</h3>
+
         <div className="search-box">
           <input
             type="text"
@@ -67,6 +67,7 @@ function Forcast(props) {
             />
           </div>
         </div>
+
         <ul>
           {typeof weather.main !== "undefined" ? (
             <div>
@@ -77,13 +78,13 @@ function Forcast(props) {
                 <img
                   className="temp"
                   src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-                  alt={weather.weather[0].description}
+                  alt={weather.weather[0].description || "Weather icon"}
                 />
               </li>
               <li>
                 Temperature{" "}
                 <span className="temp">
-                  {Math.round(weather.main.temp)}°c ({weather.weather[0].main})
+                  {Math.round(weather.main.temp)}°C ({weather.weather[0].main})
                 </span>
               </li>
               <li>
